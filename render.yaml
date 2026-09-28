@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: engbrain
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: HINDSIGHT_API_KEY
+        sync: false
+      - key: HINDSIGHT_BASE_URL
+        value: https://api.hindsight.vectorize.io
+      - key: HINDSIGHT_BANK_ID
+        value: engbrain-engineering
+      - key: HINDSIGHT_TIMEOUT
+        value: "30"
